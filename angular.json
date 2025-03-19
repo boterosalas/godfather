@@ -19,6 +19,7 @@
           "options": {
             "outputPath": "dist/godfather",
             "baseHref": "/godfather/",
+            "deployUrl": "/godfather/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
