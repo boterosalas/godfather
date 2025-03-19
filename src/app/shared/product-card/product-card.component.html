@@ -3,7 +3,7 @@
     See more <i class="bi bi-arrow-up-right-circle"></i>
   </span>
   <img
-    [src]="`/images/${product.image}`| prefixPath"
+    src="{{ '/images/' + product.image | prefixPath }}"
     class="product-card__image"
     alt=""
   />
