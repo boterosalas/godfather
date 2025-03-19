@@ -1,0 +1,99 @@
+<nav
+  id="principal-menu"
+  class="navbar navbar-expand-lg fixed-top p-0"
+  [ngClass]="{ 'navbar--background': isBackgroundNavbarSection }"
+>
+  <div class="container-fluid container-lg px-3 m-0 m-lg-auto">
+    <a class="navbar-brand fs-1 text-light" routerLink="/">
+      <img
+        src="/images/godfather-icon-white-letter.png"
+        id="principal-menu__logo"
+        height="90"
+        alt=""
+      />
+    </a>
+    <button
+      class="navbar-toggler border-light shadow-none rounded-circle p-2"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="bi bi-list text-light fs-2"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto m-lg-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle fs-5 text-light pb-1"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/products/bakery">Bakery</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/products/display">
+                Display
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" routerLink="/products/restaurant">
+                Restaurant
+              </a>
+            </li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link fs-5 text-light pb-1" routerLink="/products/bakery">
+            Bakery
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-light pb-1" routerLink="/products/display">
+            Display
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-light pb-1" routerLink="/products/restaurant">
+            Restaurant
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-light pb-1" routerLink="/products">
+            Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-light pb-1" routerLink="/about">
+            About us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-light pb-1" routerLink="/contact">
+            Contact
+          </a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center" role="search">
+        <input
+          class="form-control me-2 shadow-none"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          [formControl]="searchControl"
+        />
+        <button class="btn btn-outline-light rounded-circle p-2 lh-1">
+          <i class="bi bi-search fs-5"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

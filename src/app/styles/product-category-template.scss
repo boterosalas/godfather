@@ -1,0 +1,16 @@
+.product-list {
+  margin: 100px auto;
+  padding: 40px 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+}
+
+.page-title {
+  margin: 5rem auto;
+}
+.page-description {
+  margin: 5rem auto;
+  max-width: 1200px;
+}

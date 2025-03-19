@@ -1,0 +1,26 @@
+<app-header-banner
+  htmlTitle="Products"
+  image="/images/bakery-equipment.jpg"
+  subtitle="Discover our range of high-quality products designed to meet your needs."
+></app-header-banner>
+<div class="tab-container">
+  <nav
+    mat-tab-nav-bar
+    class="mat-elevation-z8 tab-container"
+    [tabPanel]="tabPanel"
+  >
+    <a
+      mat-tab-link
+      *ngFor="let link of navLinks"
+      routerLink="{{ link.link }}"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      <span>{{ link.label | uppercase }}</span>
+    </a>
+  </nav>
+</div>
+<mat-tab-nav-panel #tabPanel>
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>

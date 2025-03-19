@@ -1,0 +1,16 @@
+<p class="text-center my-5 page-description">
+  Showcase your products in style with our premium commercial display solutions.
+  Designed for bakeries, restaurants, and supermarkets, our refrigerated and
+  heated displays ensure optimal temperature control while enhancing the visual
+  appeal of your food. Built with sleek, modern aesthetics and durable
+  materials, our showcases protect freshness and maximize customer engagement.
+  Whether you need a heated display for fresh pastries or a refrigerated case
+  for gourmet delicacies, our solutions are engineered to highlight your
+  products at their best. Turn browsing into buying with high-quality displays
+  that make every product look irresistible.
+</p>
+<section class="product-list">
+  @for (product of productList; track product.id){
+  <app-product-card [product]="product"></app-product-card>
+  }
+</section>

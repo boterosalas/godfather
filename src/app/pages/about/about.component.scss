@@ -1,0 +1,44 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.mision-image,
+.vision-image {
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+.mision-image {
+  border-radius: 78% 34% 66% 42% / 53% 33% 26% 30%;
+}
+.vision-image {
+  border-radius: 26% 80% 42% 42% / 53% 69% 26% 30%;
+}
+
+.mision-section {
+  background-color: rgb($primary-blue, 50%);
+  padding: 7rem 0px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%; /* Lo posiciona en el centro */
+    transform: translateX(-50%); /* Centra exactamente el triángulo */
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 20px solid; /* Color del borde debe coincidir con el fondo */
+  }
+  &::before {
+    border-top-color: #fff; /* Color del borde debe coincidir con el fondo */
+    top: 0px; /* Desplaza el triángulo hacia abajo */
+  }
+
+  &::after {
+    bottom: -20px; /* Desplaza el triángulo hacia abajo */
+    border-top-color: rgb(
+      $primary-blue,
+      50%
+    ); /* Color del borde debe coincidir con el fondo */
+  }
+}

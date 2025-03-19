@@ -1,0 +1,14 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.footer {
+  background-color: $primary-blue;
+  padding: 80px 0px;
+
+  .quick-links {
+    .quick-links__link {
+      text-decoration: none;
+      @include hoverBorderBottom;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+import { CommonModule } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  inject,
+} from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router';
+import { HAS_HEADER_PAGES } from '@src/app/core/const/has-header-pages';
+import { WindowService } from '@src/app/core/services/window/window.service';
+import { fromEvent, Subject } from 'rxjs';
+import { throttleTime, map, takeUntil, filter } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-navbar',
+  imports: [ReactiveFormsModule, RouterModule, CommonModule],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
+})
+export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
+  private _windowRef = inject(WindowService);
+  private _router = inject(Router);
+  isBackgroundNavbarSection: boolean = false;
+
+  searchControl = new FormControl(null);
+  private destroy$ = new Subject<void>(); // 👈 Definir destroy$
+
+  ngOnInit(): void {
+    this.searchControl.valueChanges.subscribe((value) => {
+      console.log(value);
+    });
+    this.listenPage();
+  }
+
+  ngAfterViewInit(): void {
+    this.resizeListener();
+  }
+
+  resizeListener() {
+    const windowRef = this._windowRef.nativeWindow;
+    if (windowRef) {
+      fromEvent(windowRef, 'scroll')
+        .pipe(
+          throttleTime(50), // Limita la cantidad de eventos emitidos cada 200ms
+          map(() => windowRef.scrollY), // Obtiene la posición vertical del scroll
+          takeUntil(this.destroy$)
+        )
+        .subscribe(() => {
+          const menu = document.getElementById('principal-menu');
+          const banner = document.getElementById('header-banner');
+          const principalMenuLogo = document.getElementById(
+            'principal-menu__logo'
+          )!;
+          if (banner) {
+            const { bottom: bannerBottom } = banner.getBoundingClientRect();
+            if (bannerBottom > 70) {
+              menu?.classList.remove('navbar--background');
+              menu?.classList.add('bg-transparent');
+              principalMenuLogo.style.height = '90px';
+            } else {
+              menu?.classList.add('navbar--background');
+              menu?.classList.remove('bg-transparent');
+              principalMenuLogo.style.height = '60px';
+            }
+          }
+        });
+      dispatchEvent(new Event('scroll'));
+    }
+  }
+
+  private listenPage() {
+    this._router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        map((event) => event as NavigationEnd)
+      )
+      .subscribe((event: NavigationEnd) => {
+        this.isBackgroundNavbarSection = !HAS_HEADER_PAGES.some((path) =>
+          event.url.startsWith(path)
+        );
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(); // 👈 Emitir valor para completar los observables
+    this.destroy$.complete();
+  }
+}

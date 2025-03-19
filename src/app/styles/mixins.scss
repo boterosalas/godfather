@@ -1,0 +1,69 @@
+// Mixins para reutilización en el proyecto
+
+// 📌 1. Mixin para Media Queries (Responsive)
+@mixin fromSize($breakpoint) {
+  $breakpoints: (
+    "xs": 0px,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px,
+  );
+
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "El breakpoint #{$breakpoint} no está definido.";
+  }
+}
+
+// 📌 2. Mixin para Flexbox
+@mixin flexbox($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+// 📌 3. Mixin para Grid Layout
+@mixin grid($columns: 2, $gap: 10px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// 📌 5. Mixin para Texto con Puntos Suspensivos (Truncate)
+@mixin text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 📌 6. Mixin para Convertir PX a REM
+@mixin rem($size) {
+  font-size: calc($size / 16) + rem;
+}
+
+@mixin hoverBorderBottom() {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: $primary-yellow;
+    transform: translateX(-50%);
+  }
+
+  &:hover::after {
+    transition: width 0.4s ease, left 0.4s ease;
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+  }
+}

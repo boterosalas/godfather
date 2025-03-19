@@ -1,0 +1,15 @@
+<article
+  id="header-banner"
+  class="container-fluid header-banner d-flex flex-column justify-content-center align-items-center"
+>
+  <img [src]="image" class="header-banner__image" alt="" />
+  <h2
+    class="header-banner__title text-center"
+    *ngIf="htmlTitle"
+    [innerHTML]="htmlTitle"
+  ></h2>
+  <h2 class="header-banner__title text-center" *ngIf="title">{{ title }}</h2>
+  <p class="header-banner__description" *ngIf="subtitle">
+    {{ subtitle }}
+  </p>
+</article>

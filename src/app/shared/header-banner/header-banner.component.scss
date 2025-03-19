@@ -1,0 +1,31 @@
+@import "@styles/mixins.scss";
+
+.header-banner {
+  position: relative;
+
+  &,
+  .header-banner__image {
+    height: 500px;
+  }
+
+  .header-banner__image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(0.25);
+    object-fit: cover;
+  }
+
+  .header-banner__title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .header-banner__description {
+    font-size: 1.2rem;
+    color: white;
+  }
+}
