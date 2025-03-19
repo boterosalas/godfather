@@ -2,7 +2,7 @@
   id="header-banner"
   class="container-fluid header-banner d-flex flex-column justify-content-center align-items-center"
 >
-  <img [src]="image" class="header-banner__image" alt="" />
+  <img [src]="image | prefixPath" class="header-banner__image" alt="" />
   <h2
     class="header-banner__title text-center"
     *ngIf="htmlTitle"

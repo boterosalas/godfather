@@ -3,10 +3,11 @@ import {
   PRODUCT_CATEGORY,
   PRODUCT_INTERFACE,
 } from '@src/app/core/const/products';
+import { PrefixPathPipe } from '@src/app/core/pipes/prefix-path.pipe';
 
 @Component({
   selector: 'app-product-card',
-  imports: [],
+  imports: [PrefixPathPipe],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
 })

@@ -14,13 +14,14 @@ import {
   RouterModule,
 } from '@angular/router';
 import { HAS_HEADER_PAGES } from '@src/app/core/const/has-header-pages';
+import { PrefixPathPipe } from '@src/app/core/pipes/prefix-path.pipe';
 import { WindowService } from '@src/app/core/services/window/window.service';
 import { fromEvent, Subject } from 'rxjs';
 import { throttleTime, map, takeUntil, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
-  imports: [ReactiveFormsModule, RouterModule, CommonModule],
+  imports: [ReactiveFormsModule, RouterModule, CommonModule, PrefixPathPipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
