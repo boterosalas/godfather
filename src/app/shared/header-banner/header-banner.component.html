@@ -9,7 +9,7 @@
     alt=""
   />
   <video autoplay loop class="header-banner__image" *ngIf="video && !image">
-    <source [src]="video" type="video/mp4" />
+    <source [src]="video | prefixPath" type="video/mp4" />
   </video>
   <h2
     class="header-banner__title text-center"
