@@ -4,7 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'prefixPath',
 })
 export class PrefixPathPipe implements PipeTransform {
-  private readonly basePath = '/godfather';
+  // private readonly basePath = '/godfather';
+  private readonly basePath = '/';
 
   transform(value: string): string {
     if (!value) return '';

@@ -1,2 +1,16 @@
 $primary-blue: #154d85;
 $primary-yellow: #ffc107;
+$primary-grey: #2e2e2e;
+
+.gf-text-primary-blue {
+  color: $primary-blue;
+}
+
+.gf-text-primary-grey {
+  color: $primary-grey;
+}
+
+.section-title {
+  border-bottom: 2px solid $primary-yellow;
+  padding: 0px 1rem;
+}

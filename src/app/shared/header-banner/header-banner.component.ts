@@ -10,6 +10,7 @@ import { PrefixPathPipe } from '@src/app/core/pipes/prefix-path.pipe';
 })
 export class HeaderBannerComponent {
   @Input() image: string = '';
+  @Input() video: string = '';
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() htmlTitle: string = '';

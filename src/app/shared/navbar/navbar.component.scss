@@ -3,8 +3,10 @@
 .navbar {
   &:has(.navbar-collapse.collapsing),
   &:has(.navbar-collapse.show) {
-    background: rgb(255 255 255 / 20%);
+    padding-bottom: 2rem !important;
   }
+  &:has(.navbar-collapse.collapsing),
+  &:has(.navbar-collapse.show),
   &.navbar--background {
     background-color: rgb($primary-blue, 90%);
   }

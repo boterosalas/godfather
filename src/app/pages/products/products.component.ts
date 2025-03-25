@@ -16,7 +16,7 @@ import { HeaderBannerComponent } from '@src/app/shared/header-banner/header-bann
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductsComponent {
   title = 'app';
@@ -36,8 +36,8 @@ export class ProductsComponent {
         index: 1,
       },
       {
-        label: 'Restaurant',
-        link: 'restaurant',
+        label: 'Ovens',
+        link: 'ovens',
         index: 2,
       },
     ];

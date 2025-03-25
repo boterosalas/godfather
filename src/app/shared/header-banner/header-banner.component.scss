@@ -16,12 +16,16 @@
     z-index: -1;
     filter: brightness(0.25);
     object-fit: cover;
+    height: 100%;
   }
 
   .header-banner__title {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: white;
+    @include fromSize("lg") {
+      font-size: 5rem;
+    }
   }
 
   .header-banner__description {

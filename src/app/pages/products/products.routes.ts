@@ -21,10 +21,10 @@ export const productsRoutes: Routes = [
           ),
       },
       {
-        path: 'restaurant',
+        path: 'ovens',
         loadComponent: () =>
-          import('./components/restaurant/restaurant.component').then(
-            (m) => m.RestaurantComponent
+          import('./components/ovens/ovens.component').then(
+            (m) => m.OvensComponent
           ),
       },
       {

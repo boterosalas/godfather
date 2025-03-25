@@ -4,7 +4,7 @@
   subtitle="Meet our team, find the best way to connect with us."
 ></app-header-banner>
 <div class="container-fluid p-0">
-  <p class="container mt-5 pt-5 text-justify fs-5">
+  <p class="container mt-5 pt-5 text-justify fs-5 gf-text-primary-grey">
     <strong>Godfather Food Machinery</strong> is a family-owned company and a
     leading provider of high-quality machinery and equipment for the food
     industry. We specialize in the manufacturing and distribution of bakery
@@ -12,7 +12,7 @@
     with superior performance to meet our customers' needs.
   </p>
 
-  <p class="container text-justify fs-5">
+  <p class="container text-justify fs-5 gf-text-primary-grey">
     With over 25 years of experience in the industry, we have built a solid
     track record as experts in the design, manufacturing, and direct importation
     of high-performance equipment. Our extensive experience supports our
@@ -23,7 +23,7 @@
     the foundation of our success and the trust our clients place in us.
   </p>
 
-  <p class="container text-justify fs-5">
+  <p class="container text-justify fs-5 gf-text-primary-grey">
     Over the years, we have witnessed the positive impact our products have on
     our clients' businesses, ranging from large corporations to food industry
     entrepreneurs. Customer satisfaction is our top priority, and we continually
@@ -46,8 +46,10 @@
           />
         </div>
         <div class="col-12 col-lg-7">
-          <h3 class="text-center fs-1">Our Mission</h3>
-          <p class="fs-5">
+          <h3 class="text-center fs-1 gf-text-primary-blue mb-4">
+            <span class="section-title">Our Mission</span>
+          </h3>
+          <p class="fs-5 gf-text-primary-grey">
             At <strong>Godfather Food Machinery,</strong> our mission is to
             provide the highest quality machinery and equipment for the food
             industry, offering innovative solutions with superior performance
@@ -63,11 +65,17 @@
   <div class="container my-5 py-5">
     <div class="row my-5 align-items-center">
       <div class="col-12 col-lg-5">
-        <img [src]="'/images/vision.jpg' | prefixPath" class="img-fluid vision-image" alt="" />
+        <img
+          [src]="'/images/vision.jpg' | prefixPath"
+          class="img-fluid vision-image"
+          alt=""
+        />
       </div>
       <div class="col-12 col-lg-7">
-        <h3 class="text-center fs-1">Our Vision</h3>
-        <p class="fs-5">
+        <h3 class="text-center fs-1 gf-text-primary-blue mb-4">
+          <span class="section-title">Our Vision</span>
+        </h3>
+        <p class="fs-5 gf-text-primary-grey">
           To be recognized as leaders in the food machinery industry,
           specializing in bakery equipment, rotary ovens, and display counters.
           We aim to continue being the preferred partner for businesses of all
@@ -79,11 +87,24 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <h3 class="text-center fs-1 mb-4 gf-text-primary-blue">
+        <span class="section-title">Our Story</span>
+      </h3>
+      <div class="d-flex flex-column flex-lg-row justify-content-around">
+        <div class="col-12 col-lg-4 p-4">
+          <app-instagram-post postId="DHcNRF3MvDM"></app-instagram-post>
+        </div>
+        <div class="col-12 col-lg-4 p-4">
+          <app-instagram-post postId="DHGXYzfRrZV"></app-instagram-post>
+        </div>
+        <div class="col-12 col-lg-4 p-4">
+          <app-instagram-post postId="DGLtVXwsS1m"></app-instagram-post>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="my-5 py-5"></div>
-  <div class="row">
-    <h3 class="fs-4">Important</h3>
-  </div>
-  <div class="row">
-    <h3 class="fs-4">Our Story</h3>
-  </div>
 </div>

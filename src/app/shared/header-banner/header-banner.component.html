@@ -2,7 +2,15 @@
   id="header-banner"
   class="container-fluid header-banner d-flex flex-column justify-content-center align-items-center"
 >
-  <img [src]="image | prefixPath" class="header-banner__image" alt="" />
+  <img
+    *ngIf="!video && image"
+    [src]="image | prefixPath"
+    class="header-banner__image"
+    alt=""
+  />
+  <video autoplay loop class="header-banner__image" *ngIf="video && !image">
+    <source [src]="video" type="video/mp4" />
+  </video>
   <h2
     class="header-banner__title text-center"
     *ngIf="htmlTitle"
