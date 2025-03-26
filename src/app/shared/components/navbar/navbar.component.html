@@ -4,7 +4,11 @@
   [ngClass]="{ 'navbar--background': isBackgroundNavbarSection }"
 >
   <div class="container-fluid container-lg px-3 m-0 m-lg-auto">
-    <a class="navbar-brand fs-1 text-light" routerLink="/">
+    <a
+      class="navbar-brand fs-1 text-light"
+      routerLink="/"
+      (click)="collapseNav()"
+    >
       <img
         [src]="'/images/godfather-icon-white-letter.png' | prefixPath"
         id="principal-menu__logo"
@@ -20,6 +24,7 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      #navbarToggler
     >
       <i class="bi bi-list text-light fs-2"></i>
     </button>
@@ -66,17 +71,17 @@
             Restaurant
           </a>
         </li> -->
-        <li class="nav-item">
+        <li class="nav-item" (click)="collapseNav()">
           <a class="nav-link fs-5 text-light pb-1" routerLink="/products">
             Products
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" (click)="collapseNav()">
           <a class="nav-link fs-5 text-light pb-1" routerLink="/about">
             About us
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" (click)="collapseNav()">
           <a class="nav-link fs-5 text-light pb-1" routerLink="/contact">
             Contact
           </a>
@@ -90,7 +95,10 @@
           aria-label="Search"
           [formControl]="searchControl"
         />
-        <button class="btn btn-outline-light rounded-circle p-2 lh-1">
+        <button
+          class="btn btn-outline-light rounded-circle p-2 lh-1"
+          (click)="collapseNav()"
+        >
           <i class="bi bi-search fs-5"></i>
         </button>
       </div>

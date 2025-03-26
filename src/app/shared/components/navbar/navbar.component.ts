@@ -2,17 +2,14 @@ import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
+  ElementRef,
   OnDestroy,
   OnInit,
+  ViewChild,
   inject,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import {
-  ActivatedRoute,
-  NavigationEnd,
-  Router,
-  RouterModule,
-} from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { HAS_HEADER_PAGES } from '@src/app/core/const/has-header-pages';
 import { PrefixPathPipe } from '@src/app/core/pipes/prefix-path.pipe';
 import { WindowService } from '@src/app/core/services/window/window.service';
@@ -28,23 +25,29 @@ import { throttleTime, map, takeUntil, filter } from 'rxjs/operators';
 export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   private _windowRef = inject(WindowService);
   private _router = inject(Router);
-  isBackgroundNavbarSection: boolean = false;
-
-  searchControl = new FormControl(null);
   private destroy$ = new Subject<void>(); // 👈 Definir destroy$
+  isBackgroundNavbarSection: boolean = false;
+  searchControl = new FormControl(null);
+  @ViewChild('navbarToggler') navbarToggler: ElementRef | any;
 
   ngOnInit(): void {
-    this.searchControl.valueChanges.subscribe((value) => {
-      console.log(value);
-    });
     this.listenPage();
   }
 
   ngAfterViewInit(): void {
     this.resizeListener();
   }
+  collapseNav() {
+    if (this.navBarTogglerIsVisible()) {
+      this.navbarToggler.nativeElement.click();
+    }
+  }
 
-  resizeListener() {
+  private navBarTogglerIsVisible() {
+    return this.navbarToggler.nativeElement.offsetParent !== null;
+  }
+
+  private resizeListener() {
     const windowRef = this._windowRef.nativeWindow;
     if (windowRef) {
       fromEvent(windowRef, 'scroll')

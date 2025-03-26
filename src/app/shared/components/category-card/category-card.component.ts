@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { PrefixPathPipe } from "../../../core/pipes/prefix-path.pipe";
 
 export interface Category {
   title: string;
@@ -11,7 +12,7 @@ export interface Category {
 
 @Component({
   selector: 'app-category-card',
-  imports: [RouterModule],
+  imports: [RouterModule, PrefixPathPipe],
   templateUrl: './category-card.component.html',
   styleUrl: './category-card.component.scss',
 })

@@ -1,6 +1,6 @@
-<div class="category-card">
+<div class="category-card m-auto">
   <div class="category-card__image-wrapper">
-    <img [src]="category.image" class="category-card__image" />
+    <img [src]="category.image | prefixPath" class="category-card__image" />
   </div>
   <div class="category-card__info text-center">
     <h5 class="category-card__title">{{ category.title }}</h5>
