@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, Renderer2, inject } from '@angular/core';
 import { PrefixPathPipe } from '@src/app/core/pipes/prefix-path.pipe';
 import { WindowService } from '@src/app/core/services/window/window.service';
-import { HeaderBannerComponent } from '@src/app/shared/header-banner/header-banner.component';
-import { InstagramPostComponent } from '@src/app/shared/instagram-post/instagram-post.component';
+import { HeaderBannerComponent } from '@src/app/shared/components/header-banner/header-banner.component';
+import { InstagramPostComponent } from '@src/app/shared/components/instagram-post/instagram-post.component';
 
 @Component({
   selector: 'app-about',

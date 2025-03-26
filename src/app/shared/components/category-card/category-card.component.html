@@ -1,0 +1,14 @@
+<div class="category-card">
+  <div class="category-card__image-wrapper">
+    <img [src]="category.image" class="category-card__image" />
+  </div>
+  <div class="category-card__info text-center">
+    <h5 class="category-card__title">{{ category.title }}</h5>
+    <p class="category-card__description">
+      {{ category.description }}
+    </p>
+    <a class="btn category-card__btn" [routerLink]="category.link">
+      {{ category.cta }}
+    </a>
+  </div>
+</div>

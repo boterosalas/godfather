@@ -4,7 +4,7 @@ import {
   PRODUCT_INTERFACE,
 } from '@src/app/core/const/products';
 import { ProductsService } from '@src/app/core/services/products/products.service';
-import { ProductCardComponent } from '@src/app/shared/product-card/product-card.component';
+import { ProductCardComponent } from '@src/app/shared/components/product-card/product-card.component';
 
 @Component({
   selector: 'app-ovens',
@@ -14,7 +14,7 @@ import { ProductCardComponent } from '@src/app/shared/product-card/product-card.
 })
 export class OvensComponent implements OnInit {
   private productsService = inject(ProductsService);
-  private restaurantCategory = PRODUCT_CATEGORY.RESTAURANT_EQUIPMENT;
+  private restaurantCategory = PRODUCT_CATEGORY.OVENS;
   productList: PRODUCT_INTERFACE[] = [];
 
   ngOnInit(): void {

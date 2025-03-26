@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ProductCardComponent } from '@src/app/shared/product-card/product-card.component';
+import { ProductCardComponent } from '@src/app/shared/components/product-card/product-card.component';
 import {
   PRODUCT_CATEGORY,
   PRODUCT_INTERFACE,

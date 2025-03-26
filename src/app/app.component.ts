@@ -1,16 +1,15 @@
+import { Component, OnInit, inject } from '@angular/core';
 import {
-  AfterViewInit,
-  Component,
-  OnInit,
-  Renderer2,
-  inject,
-} from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+  NavigationEnd,
+  NavigationStart,
+  Router,
+  RouterOutlet,
+} from '@angular/router';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { filter, map } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { HAS_HEADER_PAGES } from './core/const/has-header-pages';
-import { FooterComponent } from './shared/footer/footer.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { isExcludedPathFromResetScroll } from './core/utils/excludedPaths';
 import { WindowService } from './core/services/window/window.service';
 
@@ -21,10 +20,10 @@ import { WindowService } from './core/services/window/window.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  private renderer = inject(Renderer2);
   private _windowRef = inject(WindowService);
   private _router = inject(Router);
   isPaddingTopSection: boolean = false;
+  prevRoute: string = '';
 
   constructor(private router: Router) {}
 
@@ -50,8 +49,15 @@ export class AppComponent implements OnInit {
     const windowRef = this._windowRef.nativeWindow;
     if (windowRef) {
       this.router.events.subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          this.prevRoute = location.href;
+        }
         if (event instanceof NavigationEnd) {
-          if (!isExcludedPathFromResetScroll(event)) {
+          if (
+            !isExcludedPathFromResetScroll(event.url) ||
+            (!isExcludedPathFromResetScroll(this.prevRoute) &&
+              isExcludedPathFromResetScroll(event.url))
+          ) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         }

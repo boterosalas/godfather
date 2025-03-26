@@ -1,0 +1,24 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.category-card {
+  width: 100%;
+  max-width: 400px;
+  .category-card__image-wrapper {
+    width: 100%;
+    height: 300px;
+    .category-card__image {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+      margin: auto;
+      display: block;
+    }
+  }
+
+  .category-card__btn {
+    background-color: $primary-blue;
+    color: #fff;
+  }
+}

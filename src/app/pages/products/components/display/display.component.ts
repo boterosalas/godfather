@@ -4,7 +4,7 @@ import {
   PRODUCT_INTERFACE,
 } from '@src/app/core/const/products';
 import { ProductsService } from '@src/app/core/services/products/products.service';
-import { ProductCardComponent } from '@src/app/shared/product-card/product-card.component';
+import { ProductCardComponent } from '@src/app/shared/components/product-card/product-card.component';
 
 @Component({
   selector: 'app-display',

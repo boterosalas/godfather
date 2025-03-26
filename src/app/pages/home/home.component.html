@@ -4,10 +4,10 @@
   subtitle="High performance equipment for your business"
 ></app-header-banner>
 <div class="my-5 py-3"></div>
-<h3 class="text-center fs-1 mb-4 gf-text-primary-blue">
-  <span class="section-title">Powering Your Business for Success</span>
-</h3>
-<div class="container">
+<div class="container my-5">
+  <h3 class="text-center fs-1 mb-4 gf-text-primary-blue">
+    <span class="section-title">Powering Your Business for Success</span>
+  </h3>
   <p class="fs-5 gf-text-primary-grey">
     At Godfather Food Machinery, we know what it takes to elevate your bakery or
     food business. With over 25 years of experience, we provide high-performance
@@ -21,7 +21,16 @@
     be your trusted partner. Discover how our machines can transform your
     production and boost your sales!
   </p>
+  <div class="mt-5 d-flex flex-column flex-md-row justify-content-around">
+    <div
+      class="col-12 col-md-6 col-lg-4 p-4"
+      *ngFor="let category of categories"
+    >
+      <app-category-card [category]="category"></app-category-card>
+    </div>
+  </div>
 </div>
+<div class="my-5 py-3"></div>
 <div class="container my-5 p-4">
   <h3 class="text-center fs-1 mb-4 gf-text-primary-blue">
     <span class="section-title">Find Your Next Machine Today</span>
@@ -38,22 +47,21 @@
     <script src="https://player.vimeo.com/api/player.js"></script>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <h3 class="text-center fs-1 mb-4 gf-text-primary-blue">
-      <span class="section-title">Our Story</span>
-    </h3>
-    <div class="d-flex flex-column flex-lg-row justify-content-around">
-      <div class="col-12 col-lg-4 p-4">
-        <app-instagram-post postId="DBtQ7AQxT71"></app-instagram-post>
-      </div>
-      <div class="col-12 col-lg-4 p-4">
-        <app-instagram-post postId="C8uK586RGC_"></app-instagram-post>
-      </div>
-      <div class="col-12 col-lg-4 p-4">
-        <app-instagram-post postId="C-l9U8Ksxjv"></app-instagram-post>
-      </div>
+<div class="my-5 py-3"></div>
+<div class="container my-5">
+  <h3 class="text-center fs-1 mb-4 gf-text-primary-blue">
+    <span class="section-title">Our Story</span>
+  </h3>
+  <div class="d-flex flex-column flex-md-row justify-content-around">
+    <div class="col-12 col-md-6 col-lg-4 p-4">
+      <app-instagram-post postId="DBtQ7AQxT71"></app-instagram-post>
+    </div>
+    <div class="d-none d-md-block col-12 col-md-6 col-lg-4 p-4">
+      <app-instagram-post postId="C8uK586RGC_"></app-instagram-post>
+    </div>
+    <div class="d-none d-lg-block col-12 col-lg-4 p-4">
+      <app-instagram-post postId="C-l9U8Ksxjv"></app-instagram-post>
     </div>
   </div>
 </div>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br />

@@ -3,7 +3,7 @@ import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { HeaderBannerComponent } from '@src/app/shared/header-banner/header-banner.component';
+import { HeaderBannerComponent } from '@src/app/shared/components/header-banner/header-banner.component';
 
 @Component({
   selector: 'app-products',
