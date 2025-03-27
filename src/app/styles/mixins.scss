@@ -16,7 +16,9 @@
       @content;
     }
   } @else {
-    @warn "El breakpoint #{$breakpoint} no está definido.";
+    @media (min-width: $breakpoint) {
+      @content;
+    }
   }
 }
 

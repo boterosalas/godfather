@@ -1,2 +1,11 @@
 @import "@styles/mixins.scss";
 @import "@styles/variables.scss";
+
+.video-iframe {
+  height: 250px;
+  width: 100%;
+  margin: auto;
+  @include fromSize("md") {
+    height: 400px;
+  }
+}

@@ -15,6 +15,7 @@ import { PrefixPathPipe } from '@src/app/core/pipes/prefix-path.pipe';
 import { WindowService } from '@src/app/core/services/window/window.service';
 import { fromEvent, Subject } from 'rxjs';
 import { throttleTime, map, takeUntil, filter } from 'rxjs/operators';
+import { menuItems } from './menu-items';
 
 @Component({
   selector: 'app-navbar',
@@ -29,6 +30,7 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   isBackgroundNavbarSection: boolean = false;
   searchControl = new FormControl(null);
   @ViewChild('navbarToggler') navbarToggler: ElementRef | any;
+  menuItems = menuItems;
 
   ngOnInit(): void {
     this.listenPage();

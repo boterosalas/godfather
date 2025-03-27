@@ -15,12 +15,14 @@
   display: block;
   text-decoration: none;
   color: $primary-blue;
+  height: 100%;
 
   .product-card__see-more {
     position: absolute;
     top: 12px;
     right: 8px;
     visibility: hidden;
+    z-index: 1;
   }
 
   .product-card__image-wrapper {
