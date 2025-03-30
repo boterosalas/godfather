@@ -1,0 +1,106 @@
+<section class="product-detail my-5 container" *ngIf="currentProduct">
+  <h2 class="mb-0 fs-1 product-detail__title">
+    {{ currentProduct.name }}
+  </h2>
+  <div class="mt-0">
+    <span class="gf-text-primary-blue fs-5 me-2">Models:</span>
+    <span
+      *ngFor="let model of currentProduct.models"
+      class="badge rounded-pill model-badge mx-1 fw-light {{
+        currentModel!.model === model.model && 'current-model'
+      }}"
+      (click)="setCurrentModel(model)"
+    >
+      {{ model.model }}
+    </span>
+  </div>
+  <div class="row mt-5 align-items-start flex-column flex-lg-row">
+    <div class="col-12 col-lg-7 row flex-column-reverse flex-lg-row">
+      <div class="col-12 col-lg-auto">
+        <div class="row d-flex flex-row flex-lg-column gap-3 my-4 my-lg-0 mx-0">
+          <img
+            *ngFor="let image of currentModel!.images"
+            [src]="'/images/' + image | prefixPath"
+            (error)="onImageError($event)"
+            class="rounded border small-image {{
+              image === currentImage && 'selected-image'
+            }}"
+            (click)="selectImage(image)"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <img
+          [src]="'/images/' + currentImage | prefixPath"
+          class="rounded border main-image"
+          #img
+          (error)="onImageError($event)"
+        />
+      </div>
+    </div>
+    <div class="col-12 col-lg-5">
+      <article *ngIf="currentModel?.features" class="feature-list">
+        <h3 class="feature-list__title">
+          <i class="bi bi-gear fs-5 feature-list__icon"></i>
+          Features
+        </h3>
+        <ul>
+          <li
+            *ngFor="let item of currentModel!.features"
+            class="gf-text-primary-blue"
+          >
+            <span class="gf-text-primary-grey">{{ item }}</span>
+          </li>
+        </ul>
+      </article>
+      <article *ngIf="currentModel?.dimensions" class="feature-list">
+        <h3 class="feature-list__title">
+          <i class="bi bi-aspect-ratio fs-5 feature-list__icon"></i>
+          Dimensions
+        </h3>
+        <ul *ngIf="currentModel?.dimensions">
+          <li
+            *ngFor="let item of currentModel!.features"
+            class="gf-text-primary-blue"
+          >
+            <span class="gf-text-primary-grey">{{ item }}</span>
+          </li>
+        </ul>
+      </article>
+      <article *ngIf="currentModel?.altDimensions" class="feature-list">
+        <h3 class="feature-list__title">
+          <i class="bi bi-aspect-ratio fs-5 feature-list__icon"></i>
+          Dimensions
+        </h3>
+        <ng-container *ngFor="let item of currentModel?.altDimensions">
+          <p class="mb-0 fw-bold">
+            {{ item.name }}
+          </p>
+          <ul>
+            <li
+              *ngFor="let item of currentModel!.features"
+              class="gf-text-primary-blue"
+            >
+              <span class="gf-text-primary-grey">{{ item }}</span>
+            </li>
+          </ul>
+        </ng-container>
+      </article>
+      <article *ngIf="currentModel?.availableIn" class="feature-list">
+        <h3 class="feature-list__title">
+          <i class="bi bi-patch-check fs-5 feature-list__icon"></i>
+          Available In
+        </h3>
+        <ul>
+          <li
+            *ngFor="let item of currentModel!.availableIn"
+            class="gf-text-primary-blue"
+          >
+            <span class="gf-text-primary-grey">{{ item }}</span>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

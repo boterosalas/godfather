@@ -1,8 +1,9 @@
 <a
   class="product-card"
-  [href]="generateWhatsAppLink(product.name)"
-  target="_blank"
+  routerLink="/product-detail/{{ parseFriendlyUrl(product.name) }}"
 >
+  <!-- [href]="generateWhatsAppLink(product.name)"
+  target="_blank" -->
   <span class="product-card__see-more fw-semibold">
     See more <i class="bi bi-arrow-up-right-circle"></i>
   </span>

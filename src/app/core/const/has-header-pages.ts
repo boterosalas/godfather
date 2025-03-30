@@ -1,1 +1,1 @@
-export const HAS_HEADER_PAGES = ['/', '/products'];
+export const NO_HAS_HEADER_PAGES = ['/product-detail'];

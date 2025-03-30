@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { HAS_HEADER_PAGES } from '@src/app/core/const/has-header-pages';
+import { NO_HAS_HEADER_PAGES } from '@src/app/core/const/has-header-pages';
 import { PrefixPathPipe } from '@src/app/core/pipes/prefix-path.pipe';
 import { WindowService } from '@src/app/core/services/window/window.service';
 import { fromEvent, Subject } from 'rxjs';
@@ -75,6 +75,14 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
               menu?.classList.remove('bg-transparent');
               principalMenuLogo.style.height = '60px';
             }
+          } else {
+            const html = document.querySelector('html');
+            const { top: htmlTop } = html!.getBoundingClientRect();
+            if (htmlTop < -80) {
+              principalMenuLogo.style.height = '60px';
+            } else {
+              principalMenuLogo.style.height = '90px';
+            }
           }
         });
       dispatchEvent(new Event('scroll'));
@@ -88,7 +96,7 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
         map((event) => event as NavigationEnd)
       )
       .subscribe((event: NavigationEnd) => {
-        this.isBackgroundNavbarSection = !HAS_HEADER_PAGES.some((path) =>
+        this.isBackgroundNavbarSection = NO_HAS_HEADER_PAGES.some((path) =>
           event.url.startsWith(path)
         );
       });

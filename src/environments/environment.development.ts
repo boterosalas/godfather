@@ -1,4 +1,4 @@
 export const environment = {
-  EMAIL: 'info@godfatherfoodmachinery.com',
+  EMAIL: 'godfatherfoodmachinery@gmail.com',
   PHONE: '+1 352-910-5594',
 };

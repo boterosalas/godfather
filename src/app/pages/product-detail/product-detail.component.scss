@@ -1,0 +1,57 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.product-detail {
+  .product-detail__title {
+    color: $primary-blue;
+  }
+  .model-badge {
+    color: $primary-blue;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid $primary-blue;
+    transition: 0.2s;
+    &.current-model {
+      background-color: $primary-blue;
+      color: #fff;
+    }
+    &:hover{
+      -webkit-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
+      -moz-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
+      box-shadow: 0px 0px 12px 0px $box-shadow-gray;
+    }
+  }
+  .small-image {
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 70px;
+
+    &.selected-image {
+      border-color: gray !important;
+    }
+
+    &:hover{
+      -webkit-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
+      -moz-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
+      box-shadow: 0px 0px 12px 0px $box-shadow-gray;
+    }
+  }
+  .main-image {
+    width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+  }
+
+  .feature-list {
+    .feature-list__title {
+      color: $primary-blue;
+      margin-bottom: 0px;
+      .feature-list__icon {
+        color: $primary-yellow;
+        vertical-align: middle;
+      }
+    }
+  }
+}

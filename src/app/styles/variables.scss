@@ -1,6 +1,7 @@
 $primary-blue: #154d85;
 $primary-yellow: #ffc107;
 $primary-grey: #2e2e2e;
+$box-shadow-gray: #c5c5c5;
 
 .gf-text-primary-blue {
   color: $primary-blue;
@@ -10,7 +11,15 @@ $primary-grey: #2e2e2e;
   color: $primary-grey;
 }
 
+.gf-text-primary-yellow {
+  color: $primary-yellow;
+}
+
 .section-title {
   border-bottom: 2px solid $primary-yellow;
   padding: 0px 1rem;
+}
+
+.gf-text-justify {
+  text-align: justify;
 }

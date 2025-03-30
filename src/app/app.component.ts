@@ -8,7 +8,7 @@ import {
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { filter, map } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { HAS_HEADER_PAGES } from './core/const/has-header-pages';
+import { NO_HAS_HEADER_PAGES } from './core/const/has-header-pages';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { isExcludedPathFromResetScroll } from './core/utils/excludedPaths';
 import { WindowService } from './core/services/window/window.service';
@@ -39,8 +39,8 @@ export class AppComponent implements OnInit {
         map((event) => event as NavigationEnd)
       )
       .subscribe((event: NavigationEnd) => {
-        this.isPaddingTopSection = !HAS_HEADER_PAGES.some((path) =>
-          event.urlAfterRedirects.startsWith(path)
+        this.isPaddingTopSection = NO_HAS_HEADER_PAGES.some((path) =>
+          event.url.startsWith(path)
         );
       });
   }

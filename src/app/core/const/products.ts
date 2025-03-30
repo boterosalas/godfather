@@ -6,20 +6,19 @@ export interface PRODUCT_INTERFACE_DB {
   name: string;
   category: PRODUCT_CATEGORY;
   image: string;
-  models: {
-    model: string;
-    availableIn?: string[];
-    description?: string;
-    dimensions?: string[];
-    altDimensions?: {
-      name: string;
-      dimensions: string[];
-    }[];
-    features?: string[];
-    functions?: string[];
-    images: string[];
-    subname?: string;
+  models: PRODUCT_MODEL[];
+}
+
+export interface PRODUCT_MODEL {
+  model: string;
+  availableIn?: string[];
+  dimensions?: string[];
+  altDimensions?: {
+    name: string;
+    dimensions: string[];
   }[];
+  features?: string[];
+  images: string[];
 }
 
 export interface DIMENSIONS {
@@ -35,8 +34,9 @@ export enum PRODUCT_CATEGORY {
 }
 
 export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
+  // Category: PRODUCT_CATEGORY.BAKERY_EQUIPMENT
   {
-    name: 'Spiral Mixer',
+    name: 'Spiral Mixer SH',
     image: 'spiral-mixer-sh.jpeg',
     models: [
       {
@@ -135,7 +135,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     category: PRODUCT_CATEGORY.BAKERY_EQUIPMENT,
   },
   {
-    name: 'Spiral Mixer',
+    name: 'Spiral Mixer HX',
     image: 'spiral-mixer-hx20.png',
     models: [
       {
@@ -148,8 +148,6 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
           'Bowl Speed : 13-32 RPM',
           'Follow the Spiral',
           'Mixing Speed: 130-320 RPM',
-        ],
-        functions: [
           'Digital Control',
           'Gear and Belt Drive',
           '10 Variable Speed',
@@ -166,8 +164,6 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
           'Bowl Speed : 13-32 RPM',
           'Follow the Spiral',
           'Mixing Speed: 130-320 RPM',
-        ],
-        functions: [
           'Digital Control',
           'Gear and Belt Drive',
           '10 Variable Speed',
@@ -184,8 +180,6 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
           'Bowl Speed : 13-32 RPM',
           'Follow the Spiral',
           'Mixing Speed: 130-320 RPM',
-        ],
-        functions: [
           'Digital Control',
           'Gear and Belt Drive',
           '10 Variable Speed',
@@ -203,8 +197,6 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
           'Bowl Speed : 13-23 RPM',
           'Follow the Spiral',
           'Mixing Speed: 130-230 RPM',
-        ],
-        functions: [
           'Digital Control',
           'Gear and Belt Drive',
           '10 Variable Speed',
@@ -216,11 +208,11 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
   },
   {
     name: 'Planetary Mixer',
-    image: '',
+    image: 'planetary-mixer-bm-60-80.png',
     models: [
       {
         model: 'BM20',
-        images: [''],
+        images: [],
         features: [
           'Capacity 20QT',
           'Heavy duty',
@@ -241,7 +233,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: 'BM30',
-        images: [''],
+        images: [],
         features: [
           'Capacity 30QT',
           'Heavy duty',
@@ -262,7 +254,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: 'BM40',
-        images: [''],
+        images: [],
         features: [
           'Capacity 40QT',
           'Heavy duty',
@@ -283,7 +275,15 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: 'BM60',
-        images: [''],
+        images: [
+          'planetary-mixer-bm-60-80.png',
+          'planetary-mixer-bm-60-80-1.png',
+          'planetary-mixer-bm-60-80-2.png',
+          'planetary-mixer-bm-60-80-3.png',
+          'planetary-mixer-bm-60-80-4.png',
+          'planetary-mixer-bm-60-80-5.png',
+          'planetary-mixer-bm-60-80-6.png',
+        ],
         features: [
           'Capacity 60QT',
           'Heavy duty',
@@ -304,7 +304,15 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: 'BM80',
-        images: [''],
+        images: [
+          'planetary-mixer-bm-60-80.png',
+          'planetary-mixer-bm-60-80-1.png',
+          'planetary-mixer-bm-60-80-2.png',
+          'planetary-mixer-bm-60-80-3.png',
+          'planetary-mixer-bm-60-80-4.png',
+          'planetary-mixer-bm-60-80-5.png',
+          'planetary-mixer-bm-60-80-6.png',
+        ],
         features: [
           'Capacity 80QT',
           'Heavy duty.',
@@ -545,23 +553,24 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     ],
     category: PRODUCT_CATEGORY.BAKERY_EQUIPMENT,
   },
+  // Category: PRODUCT_CATEGORY.FOOD_DISPLAY
   {
-    name: 'Heating Display',
-    image: 'warm-food-26.png',
+    name: 'Heated Display',
+    image: 'heated-display-38.png',
     models: [
       {
         model: '26 Inches',
         images: [
           'warm-food-26.png',
-          'warm-food-26.png-1',
-          'warm-food-26.png-2',
-          'warm-food-26.png-3',
-          'warm-food-26.png-4',
-          'warm-food-26.png-5',
-          'warm-food-26.png-6',
-          'warm-food-26.png-7',
-          'warm-food-26.png-8',
-          'warm-food-26.png-9',
+          'warm-food-26-1.png',
+          'warm-food-26-2.png',
+          'warm-food-26-3.png',
+          'warm-food-26-4.png',
+          'warm-food-26-5.png',
+          'warm-food-26-6.png',
+          'warm-food-26-7.png',
+          'warm-food-26-8.png',
+          'warm-food-26-9.png',
         ],
         features: [
           'European-style Square Display',
@@ -581,7 +590,15 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: '38 Inches',
-        images: [],
+        images: [
+          'heated-display-38.png',
+          'heated-display-38-1.png',
+          'heated-display-38-2.png',
+          'heated-display-38-3.png',
+          'heated-display-38-4.png',
+          'heated-display-38-5.png',
+          'heated-display-38-6.png',
+        ],
         features: [
           'European-style Square Display',
           'Temperature Control',
@@ -602,7 +619,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     category: PRODUCT_CATEGORY.FOOD_DISPLAY,
   },
   {
-    name: 'Bakery Dry',
+    name: 'Bakery Dry Display',
     image: '',
     models: [
       {
@@ -644,11 +661,17 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
   },
   {
     name: 'Cold Display',
-    image: '',
+    image: 'cold-display.png',
     models: [
       {
         model: '48 Inches',
-        images: [],
+        images: [
+          'cold-display.png',
+          'cold-display-1.png',
+          'cold-display-2.png',
+          'cold-display-3.png',
+          'cold-display-4.png',
+        ],
         features: [
           'European-style square display',
           'Structure made of stainless steel',
@@ -668,7 +691,13 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: '60 Inches',
-        images: [],
+        images: [
+          'cold-display.png',
+          'cold-display-1.png',
+          'cold-display-2.png',
+          'cold-display-3.png',
+          'cold-display-4.png',
+        ],
         features: [
           'European-style square display',
           'Structure made of stainless steel',
@@ -690,8 +719,8 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     category: PRODUCT_CATEGORY.FOOD_DISPLAY,
   },
   {
-    name: 'Bakery Boor Display',
-    image: 'bakery-door-display-21-trays-dark.png',
+    name: 'Bakery Front Door Display',
+    image: 'bakery-door-display-14-trays-5.png',
     models: [
       {
         model: '14 Trays',
@@ -778,9 +807,10 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     ],
     category: PRODUCT_CATEGORY.FOOD_DISPLAY,
   },
+  // Category: PRODUCT_CATEGORY.OVENS
   {
-    name: 'Rotatory Ovens',
-    image: 'rotary-oven-5-trays.png',
+    name: 'Rotary Ovens',
+    image: 'rotary-oven-12-trays.png',
     models: [
       {
         model: '5 Trays',
@@ -794,7 +824,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
           'rotary-oven-5-trays-6.png',
         ],
         features: [
-          'Electric Rotatory oven 5 trays',
+          'Electric Rotary oven 5 trays',
           'With fix oven rack',
           'Capacity: 5 trays (25.29 x 17.71 inches with 3.93 inches of separation Between Each Tray)',
           'Made of Stainless Steel',
@@ -930,11 +960,11 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
   },
   {
     name: 'Gas Convection Oven',
-    image: '',
+    image: 'gas-convection-oven-hrco-60k.png',
     models: [
       {
         model: 'HRCO-60K',
-        images: [],
+        images: ['gas-convection-oven.png'],
         features: [
           'Full stainless steel body.',
           'Gross Weight: 529.10 pounds',
