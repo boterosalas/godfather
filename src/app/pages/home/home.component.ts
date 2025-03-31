@@ -7,6 +7,7 @@ import {
   CategoryCardComponent,
 } from '@src/app/shared/components/category-card/category-card.component';
 import { CommonModule } from '@angular/common';
+import { ProductsCarouselComponent } from '@src/app/shared/components/products-carousel/products-carousel.component';
 
 @Component({
   selector: 'app-home',
@@ -35,14 +36,14 @@ export class HomeComponent {
       description: 'Showcase your products and attract more customers',
       cta: 'Discover our display solutions',
       link: '/products/display',
-      image: '/images/display-category.png',
+      image: '/images/display-category.jpeg',
     },
     {
       title: 'Ovens',
       description: 'Achieve perfect baking results with high-performance ovens',
       cta: 'Find your ideal oven',
       link: '/products/ovens',
-      image: '/images/ovens-category.png',
+      image: '/images/ovens-category.jpg',
     },
   ];
 }

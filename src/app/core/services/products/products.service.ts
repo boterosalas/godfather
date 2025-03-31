@@ -7,17 +7,13 @@ import {
 } from '../../const/products';
 import { Observable, of } from 'rxjs';
 import { parseFriendlyUrl } from '../../../shared/helpers/get-friendly-url';
+import { folderPaths } from '../../const/folder-paths';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
   constructor() {}
-  private folderPaths = {
-    [PRODUCT_CATEGORY.BAKERY_EQUIPMENT]: 'bakery',
-    [PRODUCT_CATEGORY.FOOD_DISPLAY]: 'food-display',
-    [PRODUCT_CATEGORY.OVENS]: 'ovens',
-  };
 
   getProductsByCategory(
     category: PRODUCT_CATEGORY
@@ -37,7 +33,7 @@ export class ProductsService {
             ...prd,
             images: [
               ...prd.images.map(
-                (image) => `${this.folderPaths[product.category]}/${image}`
+                (image) => `${folderPaths[product.category]}/${image}`
               ),
             ],
           })),
@@ -58,7 +54,6 @@ export class ProductsService {
     ).map((prd, index) => ({
       id: `${index}`,
       ...prd,
-      image: `${this.folderPaths[category]}/${prd.image}`,
     }));
 
     return uniqueProducts;

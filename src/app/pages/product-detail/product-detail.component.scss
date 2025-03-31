@@ -2,8 +2,39 @@
 @import "@styles/mixins.scss";
 
 .product-detail {
+  .product-detail__go-back {
+    font-size: 1rem;
+    color: $primary-blue;
+    .product-detail__go-back-icon {
+      transition: 0.2s;
+      display: inline-block;
+    }
+    &:hover {
+      .product-detail__go-back-icon {
+        transform: translateX(-4px);
+      }
+    }
+  }
   .product-detail__title {
     color: $primary-blue;
+  }
+  .product-detail__whatsapp-title {
+    border: 1px solid #128c7e;
+    background-color: #128c7e;
+    color: #fff;
+    font-size: 1rem;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: 12px;
+    @include fromSize("md") {
+      padding-top: 4px !important;
+      padding-bottom: 4px !important;
+      font-size: 1.2rem;
+      margin-top: 0px;
+    }
+    .product-detail__whatsapp-title-icon {
+      color: #fff;
+    }
   }
   .model-badge {
     color: $primary-blue;
@@ -15,7 +46,7 @@
       background-color: $primary-blue;
       color: #fff;
     }
-    &:hover{
+    &:hover {
       -webkit-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
       -moz-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
       box-shadow: 0px 0px 12px 0px $box-shadow-gray;
@@ -32,7 +63,7 @@
       border-color: gray !important;
     }
 
-    &:hover{
+    &:hover {
       -webkit-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
       -moz-box-shadow: 0px 0px 12px 0px $box-shadow-gray;
       box-shadow: 0px 0px 12px 0px $box-shadow-gray;

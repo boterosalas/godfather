@@ -1,19 +1,41 @@
 <section class="product-detail my-5 container" *ngIf="currentProduct">
-  <h2 class="mb-0 fs-1 product-detail__title">
-    {{ currentProduct.name }}
-  </h2>
-  <div class="mt-0">
-    <span class="gf-text-primary-blue fs-5 me-2">Models:</span>
-    <span
-      *ngFor="let model of currentProduct.models"
-      class="badge rounded-pill model-badge mx-1 fw-light {{
-        currentModel!.model === model.model && 'current-model'
-      }}"
-      (click)="setCurrentModel(model)"
+  <h2
+    class="mb-0 fs-1 product-detail__title d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-md-center align-items-start"
+  >
+    <div class="d-flex flex-column align-items-start">
+      <a
+        [routerLink]="categoriesPath[currentProduct.category]"
+        class="product-detail__go-back"
+      >
+        <i class="bi bi-chevron-left product-detail__go-back-icon"></i>
+        Go to {{ currentProduct.category }}
+      </a>
+      <span>
+        {{ currentProduct.name }}
+      </span>
+
+      <div class="mt-0">
+        <span class="gf-text-primary-blue fs-5 me-2">Models:</span>
+        <span
+          *ngFor="let model of currentProduct.models"
+          class="badge rounded-pill model-badge mx-1 fw-light {{
+            currentModel!.model === model.model && 'current-model'
+          }}"
+          (click)="setCurrentModel(model)"
+        >
+          {{ model.model }}
+        </span>
+      </div>
+    </div>
+    <a
+      [href]="generateWhatsAppLink(currentProduct.name)"
+      target="_blank"
+      class="btn product-detail__whatsapp-title"
     >
-      {{ model.model }}
-    </span>
-  </div>
+      Request info
+      <i class="bi bi-whatsapp product-detail__whatsapp-title-icon"></i>
+    </a>
+  </h2>
   <div class="row mt-5 align-items-start flex-column flex-lg-row">
     <div class="col-12 col-lg-7 row flex-column-reverse flex-lg-row">
       <div class="col-12 col-lg-auto">
@@ -100,7 +122,25 @@
           </li>
         </ul>
       </article>
+      <div class="text-center mt-4">
+        <a
+          [href]="generateWhatsAppLink(currentProduct.name)"
+          target="_blank"
+          class="btn product-detail__whatsapp-title fs-4 w-100"
+        >
+          Request info
+          <i class="bi bi-whatsapp product-detail__whatsapp-title-icon"></i>
+        </a>
+      </div>
     </div>
   </div>
+  <div class="my-5 py-5" *ngIf="showProduct">
+    <h3 class="text-center fs-1 mb-4 gf-text-primary-blue">
+      <span class="section-title">You May Also Be Interested In</span>
+    </h3>
+    <app-products-carousel
+      [currentProduct]="currentProduct"
+    ></app-products-carousel>
+  </div>
 </section>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />

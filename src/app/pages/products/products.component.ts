@@ -26,12 +26,12 @@ export class ProductsComponent {
   constructor(private router: Router) {
     this.navLinks = [
       {
-        label: 'Bakery',
+        label: 'Bakery Equipment',
         link: 'bakery',
         index: 0,
       },
       {
-        label: 'Display',
+        label: 'Display Cases',
         link: 'display',
         index: 1,
       },

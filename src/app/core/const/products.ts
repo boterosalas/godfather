@@ -29,7 +29,7 @@ export interface DIMENSIONS {
 
 export enum PRODUCT_CATEGORY {
   BAKERY_EQUIPMENT = 'Bakery Equipment',
-  FOOD_DISPLAY = 'Food Display',
+  FOOD_DISPLAY = 'Display Cases',
   OVENS = 'Ovens',
 }
 
@@ -81,6 +81,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       {
         model: 'QS-520B2',
         images: [
+          'dough-sheeter-qs-400b.png',
           'dough-sheeter-qs-400b-1.jpg',
           'dough-sheeter-qs-400b-2.jpg',
           'dough-sheeter-qs-400b-3.jpg',
@@ -108,6 +109,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       {
         model: 'QS-400B',
         images: [
+          'dough-sheeter-qs-400b.png',
           'dough-sheeter-qs-400b-1.jpg',
           'dough-sheeter-qs-400b-2.jpg',
           'dough-sheeter-qs-400b-3.jpg',

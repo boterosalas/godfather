@@ -1,1 +1,0 @@
-import{W as n}from"./chunk-FOHF7AZQ.js";var t=class e{get nativeWindow(){return typeof window<"u"?window:void 0}static \u0275fac=function(o){return new(o||e)};static \u0275prov=n({token:e,factory:e.\u0275fac,providedIn:"root"})};export{t as a};

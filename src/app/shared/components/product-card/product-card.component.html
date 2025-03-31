@@ -1,15 +1,15 @@
 <a
   class="product-card"
-  routerLink="/product-detail/{{ parseFriendlyUrl(product.name) }}"
+  [routerLink]="
+    canRedirect ? ['/product-detail/', parseFriendlyUrl(product.name)] : null
+  "
 >
-  <!-- [href]="generateWhatsAppLink(product.name)"
-  target="_blank" -->
   <span class="product-card__see-more fw-semibold">
     See more <i class="bi bi-arrow-up-right-circle"></i>
   </span>
-  <div class="product-card__image-wrapper">
+  <div class="product-card__image-wrapper {{size}}">
     <img
-      src="{{ '/images/' + product.image | prefixPath }}"
+      src="{{ '/images/' + getProductImagePath(product) | prefixPath }}"
       class="product-card__image"
       alt=""
       #img
@@ -17,6 +17,8 @@
     />
   </div>
   <header>
-    <h3 class="product-card__title">{{ product.name }}</h3>
+    <h3 class="product-card__title {{size}}">
+      {{ product.name }}
+    </h3>
   </header>
 </a>

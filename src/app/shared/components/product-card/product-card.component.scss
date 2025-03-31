@@ -40,11 +40,28 @@
       object-position: center;
       transition: 0.5s;
     }
+    &.small {
+      height: 150px;
+      @include fromSize("lg") {
+        height: 200px;
+      }
+    }
   }
 
   .product-card__title {
-    padding-bottom: 16px;
+    padding: 16px 0px;
     margin-bottom: 0px;
+    border-top: 1px solid $box-shadow-gray;
+    font-size: 1.2rem;
+    @include fromSize("md") {
+      font-size: 1.4rem;
+    }
+    &.small {
+      font-size: 1rem;
+      @include fromSize("md") {
+        font-size: 1.2rem;
+      }
+    }
   }
 
   &:hover {

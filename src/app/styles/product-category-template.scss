@@ -1,7 +1,7 @@
 @import "@styles/mixins.scss";
 .product-list {
-  margin: 100px auto;
-  padding: 40px 16px;
+  margin: 0px auto 50px;
+  padding: 0px 16px 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
@@ -14,10 +14,10 @@
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
   }
-  @include fromSize("md") {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
+  // @include fromSize("md") {
+  //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  //   gap: 30px;
+  // }
 }
 
 .page-title {
