@@ -32,6 +32,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'search/:search',
+    loadComponent: () =>
+      import('./pages/search-result/search-result.component').then(
+        (m) => m.SearchResultComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full',

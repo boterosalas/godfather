@@ -10,6 +10,14 @@ export const serverRoutes: ServerRoute[] = [
     },
   },
   {
+    path: 'search/:search',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      // build an array like [{ id: '1' }, { id: '2' }, { id: '3' }]
+      return [{ search: 'test' }];
+    },
+  },
+  {
     path: '**',
     renderMode: RenderMode.Prerender,
   },

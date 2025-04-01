@@ -1,0 +1,10 @@
+<h2 class="text-center f2-3 gf-text-primary-blue mt-5 mb-4">
+  <span class="section-title"> Here are the results we found for you </span>
+</h2>
+<section class="product-list" *ngIf="listProducts.length">
+  <app-product-card
+    *ngFor="let product of listProducts"
+    [product]="product"
+    size="small"
+  ></app-product-card>
+</section>

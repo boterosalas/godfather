@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   private _router = inject(Router);
   private destroy$ = new Subject<void>(); // 👈 Definir destroy$
   isBackgroundNavbarSection: boolean = false;
-  searchControl = new FormControl(null);
+  searchControl = new FormControl<string | null>(null);
   @ViewChild('navbarToggler') navbarToggler: ElementRef | any;
   menuItems = menuItems;
 
@@ -42,6 +42,14 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   collapseNav() {
     if (this.navBarTogglerIsVisible()) {
       this.navbarToggler.nativeElement.click();
+    }
+  }
+
+  search() {
+    const searchValue = this.searchControl.value || '';
+    if (searchValue.trim()) {
+      this._router.navigateByUrl(`/search/${this.searchControl.value}`);
+      this.collapseNav();
     }
   }
 
@@ -96,6 +104,9 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
         map((event) => event as NavigationEnd)
       )
       .subscribe((event: NavigationEnd) => {
+        if (!event.url.startsWith('/search')) {
+          this.searchControl.setValue('');
+        }
         this.isBackgroundNavbarSection = NO_HAS_HEADER_PAGES.some((path) =>
           event.url.startsWith(path)
         );

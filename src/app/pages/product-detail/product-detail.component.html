@@ -71,7 +71,7 @@
             *ngFor="let item of currentModel!.features"
             class="gf-text-primary-blue"
           >
-            <span class="gf-text-primary-grey">{{ item }}</span>
+            <span class="gf-text-primary-gray">{{ item }}</span>
           </li>
         </ul>
       </article>
@@ -82,10 +82,10 @@
         </h3>
         <ul *ngIf="currentModel?.dimensions">
           <li
-            *ngFor="let item of currentModel!.features"
+            *ngFor="let item of currentModel!.dimensions"
             class="gf-text-primary-blue"
           >
-            <span class="gf-text-primary-grey">{{ item }}</span>
+            <span class="gf-text-primary-gray">{{ item }}</span>
           </li>
         </ul>
       </article>
@@ -100,10 +100,10 @@
           </p>
           <ul>
             <li
-              *ngFor="let item of currentModel!.features"
+              *ngFor="let dimension of item.dimensions"
               class="gf-text-primary-blue"
             >
-              <span class="gf-text-primary-grey">{{ item }}</span>
+              <span class="gf-text-primary-gray">{{ dimension }}</span>
             </li>
           </ul>
         </ng-container>
@@ -118,7 +118,7 @@
             *ngFor="let item of currentModel!.availableIn"
             class="gf-text-primary-blue"
           >
-            <span class="gf-text-primary-grey">{{ item }}</span>
+            <span class="gf-text-primary-gray">{{ item }}</span>
           </li>
         </ul>
       </article>

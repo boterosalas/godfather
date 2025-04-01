@@ -4,10 +4,22 @@
     canRedirect ? ['/product-detail/', parseFriendlyUrl(product.name)] : null
   "
 >
-  <span class="product-card__see-more fw-semibold">
+  <span
+    class="product-card__see-more fw-semibold"
+    *ngIf="size !== 'small'; else categoryTemplate"
+  >
     See more <i class="bi bi-arrow-up-right-circle"></i>
   </span>
-  <div class="product-card__image-wrapper {{size}}">
+  <ng-template #categoryTemplate>
+    <span
+      class="badge rounded-pill product-card__category {{
+        categoryClasses[product.category]
+      }}"
+    >
+      {{ product.category }}
+    </span>
+  </ng-template>
+  <div class="product-card__image-wrapper {{ size }}">
     <img
       src="{{ '/images/' + getProductImagePath(product) | prefixPath }}"
       class="product-card__image"
@@ -17,7 +29,7 @@
     />
   </div>
   <header>
-    <h3 class="product-card__title {{size}}">
+    <h3 class="product-card__title {{ size }}">
       {{ product.name }}
     </h3>
   </header>

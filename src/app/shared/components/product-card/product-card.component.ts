@@ -9,10 +9,11 @@ import { generateWhatsAppLink } from '../../helpers/generate-whatsapp-link';
 import { parseFriendlyUrl } from '../../helpers/get-friendly-url';
 import { RouterModule } from '@angular/router';
 import { getProductImagePath } from '../../helpers/get-product-image-path';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-card',
-  imports: [PrefixPathPipe, RouterModule],
+  imports: [CommonModule, PrefixPathPipe, RouterModule],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
 })
@@ -28,4 +29,10 @@ export class ProductCardComponent {
     models: [],
     category: PRODUCT_CATEGORY.BAKERY_EQUIPMENT,
   };
+
+  categoryClasses = {
+    [PRODUCT_CATEGORY.BAKERY_EQUIPMENT]: 'bakery',
+    [PRODUCT_CATEGORY.FOOD_DISPLAY]: 'display',
+    [PRODUCT_CATEGORY.OVENS]: 'ovens',
+  }
 }

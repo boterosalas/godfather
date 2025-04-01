@@ -1,8 +1,14 @@
 @import "@styles/mixins.scss";
 
-.general-section {
-  width: 100%;
-  max-width: 2200px;
-  margin: auto;
-  padding: 0px;
+.app-origin {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .general-section {
+    width: 100%;
+    max-width: 2200px;
+    margin: auto;
+    padding: 0px;
+    flex-grow: 1;
+  }
 }

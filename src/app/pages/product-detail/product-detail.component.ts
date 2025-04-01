@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import {
   PRODUCT_CATEGORY,
   PRODUCT_INTERFACE_DB,
@@ -24,8 +24,8 @@ import { generateWhatsAppLink } from '@src/app/shared/helpers/generate-whatsapp-
 })
 export class ProductDetailComponent implements OnInit {
   private _activatedRoute = inject(ActivatedRoute);
+  private _router = inject(Router);
   private _productsService = inject(ProductsService);
-  private _changeDetector = inject(ChangeDetectorRef);
   generateWhatsAppLink = generateWhatsAppLink;
   currentProduct?: PRODUCT_INTERFACE_DB;
   currentModel?: PRODUCT_MODEL;
@@ -39,14 +39,18 @@ export class ProductDetailComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.routeListener();
+  }
+
+  routeListener() {
     this._activatedRoute.params.subscribe(({ productPath = '' }) => {
       this.showProduct = false;
-      this._changeDetector.detectChanges();
       this.currentProduct =
         this._productsService.getProductByFriendlyUrl(productPath);
-      console.log(this.currentProduct);
       if (this.currentProduct) {
         this.setCurrentModel(this.currentProduct.models[0]);
+      } else {
+        this._router.navigateByUrl('/products');
       }
       setTimeout(() => {
         this.showProduct = true;

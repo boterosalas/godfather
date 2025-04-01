@@ -1,8 +1,10 @@
-<app-navbar></app-navbar>
-<section
-  class="general-section animate__animated animate__fadeIn"
-  [ngClass]="{ 'pt-5 mt-5': isPaddingTopSection }"
->
-  <router-outlet />
+<section class="app-origin">
+  <app-navbar></app-navbar>
+  <section
+    class="general-section animate__animated animate__fadeIn"
+    [ngClass]="{ 'pt-5 mt-5': isPaddingTopSection }"
+  >
+    <router-outlet />
+  </section>
+  <app-footer></app-footer>
 </section>
-<app-footer></app-footer>

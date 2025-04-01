@@ -17,12 +17,30 @@
   color: $primary-blue;
   height: 100%;
 
-  .product-card__see-more {
+  .product-card__see-more,
+  .product-card__category {
     position: absolute;
     top: 12px;
     right: 8px;
     visibility: hidden;
     z-index: 1;
+  }
+
+  .product-card__category {
+    visibility: visible;
+    color: #000;
+    background-color: $primary-yellow;
+
+    &.bakery {
+      background-color: $primary-yellow;
+    }
+    &.display {
+      background-color: $primary-blue;
+      color: #fff;
+    }
+    &.ovens {
+      background-color: $secondary-gray;
+    }
   }
 
   .product-card__image-wrapper {

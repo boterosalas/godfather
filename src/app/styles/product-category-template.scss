@@ -3,21 +3,17 @@
   margin: 0px auto 50px;
   padding: 0px 16px 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
   gap: 12px;
   max-width: 1200px;
   @include fromSize("470px") {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 20px;
   }
   @include fromSize("660px") {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
     gap: 20px;
   }
-  // @include fromSize("md") {
-  //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  //   gap: 30px;
-  // }
 }
 
 .page-title {

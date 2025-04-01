@@ -37,11 +37,11 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
   // Category: PRODUCT_CATEGORY.BAKERY_EQUIPMENT
   {
     name: 'Spiral Mixer SH',
-    image: 'spiral-mixer-sh.jpeg',
+    image: 'spiral-mixer-sh.png',
     models: [
       {
         model: 'SH20',
-        images: ['spiral-mixer-hx20.png'],
+        images: ['spiral-mixer-sh.png', 'spiral-mixer-sh-1.png'],
         features: [
           'Bowl capacity: 20L',
           'Power: 1.5KW',
@@ -52,7 +52,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: 'SH30',
-        images: ['spiral-mixer-hx20.png'],
+        images: ['spiral-mixer-sh.png', 'spiral-mixer-sh-1.png'],
         features: [
           'Dough capacity: 30L',
           'Voltage: 110V / 60Hz ',
@@ -62,7 +62,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: 'SH50',
-        images: ['spiral-mixer-hx20.png'],
+        images: ['spiral-mixer-sh.png', 'spiral-mixer-sh-1.png'],
         features: [
           'Dough capacity: 50L',
           'Mixing speed: 250/125 rpm',
@@ -78,34 +78,6 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     name: 'Dough Sheeter',
     image: 'dough-sheeter-qs-400b.png',
     models: [
-      {
-        model: 'QS-520B2',
-        images: [
-          'dough-sheeter-qs-400b.png',
-          'dough-sheeter-qs-400b-1.jpg',
-          'dough-sheeter-qs-400b-2.jpg',
-          'dough-sheeter-qs-400b-3.jpg',
-          'dough-sheeter-qs-400b-4.jpg',
-          'dough-sheeter-qs-400b-5.jpg',
-          'dough-sheeter-qs-400b-6.jpg',
-          'dough-sheeter-qs-400b-7.jpg',
-        ],
-        features: [
-          'Full Stainless Steel #201 body',
-          'Overload protection, open-phase protection function.',
-          'protection function.',
-          'Voltage: 110V 60HZ',
-          'Power: 0.55 KW',
-          'Max. Dough capacity 13.22 LBS',
-          'Net Weight: 570 LBS',
-        ],
-        dimensions: [
-          'Stowed size: 38 x 29 x 65 Inches',
-          'With Pu-Belt, size 15.7 x 63 Inches',
-          'Roller adjustable gap 1-40mm',
-          'Expanded size: 32 x 78 x 40 Inches',
-        ],
-      },
       {
         model: 'QS-400B',
         images: [
@@ -125,6 +97,34 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
           'Voltage: 110V 60HZ',
           'Power: 0.4 KW',
           'Weight 375 LBS',
+        ],
+        dimensions: [
+          'Stowed size: 38 x 29 x 65 Inches',
+          'With Pu-Belt, size 15.7 x 63 Inches',
+          'Roller adjustable gap 1-40mm',
+          'Expanded size: 32 x 78 x 40 Inches',
+        ],
+      },
+      {
+        model: 'QS-520B2',
+        images: [
+          'dough-sheeter-qs-400b.png',
+          'dough-sheeter-qs-400b-1.jpg',
+          'dough-sheeter-qs-400b-2.jpg',
+          'dough-sheeter-qs-400b-3.jpg',
+          'dough-sheeter-qs-400b-4.jpg',
+          'dough-sheeter-qs-400b-5.jpg',
+          'dough-sheeter-qs-400b-6.jpg',
+          'dough-sheeter-qs-400b-7.jpg',
+        ],
+        features: [
+          'Full Stainless Steel #201 body',
+          'Overload protection, open-phase protection function.',
+          'Protection function.',
+          'Voltage: 110V 60HZ',
+          'Power: 0.55 KW',
+          'Max. Dough capacity 13.22 LBS',
+          'Net Weight: 570 LBS',
         ],
         dimensions: [
           'Stowed size: 38 x 29 x 65 Inches',
@@ -426,11 +426,15 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
   },
   {
     name: 'Dough Roller',
-    image: 'dough-roller-24lb.jpg',
+    image: 'dough-roller.png',
     models: [
       {
         model: '24LB',
-        images: ['dough-roller-24lb.jpg'],
+        images: [
+          'dough-roller.png',
+          'dough-roller-1.png',
+          'dough-roller-2.png',
+        ],
         features: [
           'Body made of Iron, has a double emergency stop',
           'Provided with power switch',
@@ -457,11 +461,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     models: [
       {
         model: 'MD380',
-        images: [
-          'toast-moulder-1.jpg',
-          'toast-moulder-2.jpg',
-          'toast-moulder-3.jpg',
-        ],
+        images: ['toast-moulder-1.jpg', 'toast-moulder-2.jpg'],
         features: [
           'Power 0.37kW',
           'Voltage: 110 v 60HZ',
@@ -483,7 +483,13 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     models: [
       {
         model: 'HLM36',
-        images: ['dough-divider-hlm36.png'],
+        images: [
+          'dough-divider-hlm36.png',
+          'dough-divider-hlm36-1.png',
+          'dough-divider-hlm36-2.png',
+          'dough-divider-hlm36-3.png',
+          'dough-divider-hlm36-4.jpg',
+        ],
         features: [
           '36 pcs/time',
           'Dough Range 30-190G',
@@ -501,7 +507,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
     category: PRODUCT_CATEGORY.BAKERY_EQUIPMENT,
   },
   {
-    name: 'Semi-Auto Dough Divider',
+    name: 'Semi-Auto Dough Divider And Rounder',
     image: 'semi-auto-dough-divider-and-rounder.jpg',
     models: [
       {
@@ -511,10 +517,6 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
           'semi-auto-dough-divider-and-rounder-1.jpg',
           'semi-auto-dough-divider-and-rounder-2.jpg',
           'semi-auto-dough-divider-and-rounder-3.jpg',
-          'semi-auto-dough-divider-and-rounder-4.jpg',
-          'semi-auto-dough-divider-and-rounder-5.jpg',
-          'semi-auto-dough-divider-and-rounder-6.jpg',
-          'semi-auto-dough-divider-and-rounder-7.jpg',
         ],
         features: [
           'Dough Range: 30-100G',
@@ -622,11 +624,11 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
   },
   {
     name: 'Bakery Dry Display',
-    image: '',
+    image: 'bakery-dry-display.png',
     models: [
       {
         model: '48 Inches',
-        images: [],
+        images: ['bakery-dry-display.png', 'bakery-dry-display-1.png'],
         features: [
           'European-style square display',
           'Clear Glass Fronts: Provides an unobstructed view of the items, enhancing visual appeal',
@@ -643,7 +645,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: '60 Inches',
-        images: [],
+        images: ['bakery-dry-display.png', 'bakery-dry-display-1.png'],
         features: [
           'European-style square display',
           'Clear Glass Fronts: Provides an unobstructed view of the items, enhancing visual appeal',
@@ -722,7 +724,7 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
   },
   {
     name: 'Bakery Front Door Display',
-    image: 'bakery-door-display-14-trays-5.png',
+    image: 'bakery-front-door-28-trays.png',
     models: [
       {
         model: '14 Trays',
@@ -756,22 +758,16 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       {
         model: '21 Trays',
         images: [
-          'bakery-door-display-21-trays-dark.png',
-          'bakery-door-display-21-trays-dark-1.png',
-          'bakery-door-display-21-trays-dark-2.png',
-          'bakery-door-display-21-trays-dark-3.png',
-          'bakery-door-display-21-trays-dark-4.png',
-          'bakery-door-display-21-trays-dark-5.png',
-          'bakery-door-display-21-trays-dark-6.png',
-          'bakery-door-display-21-trays-light.png',
-          'bakery-door-display-21-trays-light-1.png',
-          'bakery-door-display-21-trays-light-2.png',
-          'bakery-door-display-21-trays-light-3.png',
-          'bakery-door-display-21-trays-light-4.png',
-          'bakery-door-display-21-trays-light-5.png',
-          'bakery-door-display-21-trays-light-6.png',
-          'bakery-door-display-21-trays-light-7.png',
-          'bakery-door-display-21-trays-light-8.png',
+          'bakery-door-display-21-trays.png',
+          'bakery-door-display-21-trays-1.jpg',
+          'bakery-door-display-21-trays-2.jpg',
+          'bakery-door-display-21-trays-3.jpg',
+          'bakery-door-display-21-trays-4.jpg',
+          'bakery-door-display-21-trays-5.jpg',
+          'bakery-door-display-21-trays-6.png',
+          'bakery-door-display-21-trays-7.png',
+          'bakery-door-display-21-trays-8.png',
+          'bakery-door-display-21-trays-9.jpg',
         ],
         features: [
           'European-style square display',
@@ -790,7 +786,14 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: '28 Trays',
-        images: [],
+        images: [
+          'bakery-front-door-28-trays.png',
+          'bakery-front-door-28-trays-1.png',
+          'bakery-front-door-28-trays-2.png',
+          'bakery-front-door-28-trays-3.jpeg',
+          'bakery-front-door-28-trays-4.jpeg',
+          'bakery-front-door-28-trays-5.png',
+        ],
         features: [
           'European-style square display',
           'For 28 trays',
@@ -915,7 +918,15 @@ export const PRODUCTS_LIST: PRODUCT_INTERFACE_DB[] = [
       },
       {
         model: '18 Trays',
-        images: [''],
+        images: [
+          'rotary-oven-12-trays.png',
+          'rotary-oven-12-trays-1.png',
+          'rotary-oven-12-trays-2.png',
+          'rotary-oven-12-trays-3.png',
+          'rotary-oven-12-trays-4.png',
+          'rotary-oven-12-trays-5.png',
+          'rotary-oven-12-trays-6.png',
+        ],
         features: [
           'Rotary oven for 18 trays',
           'With 2 Removable rotary oven racks with 18 & 15 trays',
